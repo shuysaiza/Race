@@ -1,2 +1,2 @@
 # Race
-Race Game With Randowm Velocity
+Race Game With Random Velocity
