@@ -2,27 +2,25 @@ let vueltas;
 
 const pista = [];
 const autos = [];
-let size=500;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	//frameRate(10);
 	for (let i = 0; i <=7 ; i++) {
 		pista[i]=[];
 	}
 
 	pista[1]['img'] = loadImage('img/4Ca6.jpg');
-	pista[1]['x'] = 0;	
+	pista[1]['x'] = 0;
 	pista[1]['w'] = width/6;
 	pista[1]['h'] = height/3;
 	pista[1]['y'] = height-pista[1]['h'];
 
 	pista[0]['img'] = loadImage('img/4Ca1.jpg');
-	pista[0]['x'] = pista[1]['w'];	
+	pista[0]['x'] = pista[1]['w'];
 	pista[0]['w'] = width/1.5;
 	pista[0]['h'] = height/4;
 	pista[0]['y'] = height-pista[0]['h'];
-	
+
 	pista[3]['img'] = loadImage('img/4Ca3.jpg');
 	pista[3]['w'] = width/6;
 	pista[3]['h'] = height/3;
@@ -30,18 +28,18 @@ function setup() {
 	pista[3]['y'] = 0;
 
 	pista[2]['img'] = loadImage('img/4Ca2.jpg');
-	pista[2]['x'] = 0;	
+	pista[2]['x'] = 0;
 	pista[2]['w'] = width/6;
 	pista[2]['h'] = height-pista[3]['h']-pista[1]['h'];
 	pista[2]['y'] = pista[3]['h'];
 
 	pista[4]['img'] = loadImage('img/4Ca1.jpg');
-	pista[4]['x'] = pista[1]['w'];	
+	pista[4]['x'] = pista[1]['w'];
 	pista[4]['w'] = width/1.5;
 	pista[4]['h'] = height/4;
 	pista[4]['y'] = 0;
 
-	pista[5]['img'] = loadImage('img/4Ca5.jpg');	
+	pista[5]['img'] = loadImage('img/4Ca5.jpg');
 	pista[5]['w'] = width/6;
 	pista[5]['h'] = height/3;
 	pista[5]['x'] = width-pista[5]['w'];
@@ -53,7 +51,7 @@ function setup() {
 	pista[6]['x'] = width-pista[6]['w'];
 	pista[6]['y'] = 0;
 
-	pista[7]['img'] = loadImage('img/4Ca2.jpg');		
+	pista[7]['img'] = loadImage('img/4Ca2.jpg');
 	pista[7]['w'] = width/6;
 	pista[7]['h'] = height-pista[3]['h']-pista[1]['h'];
 	pista[7]['x'] = width-pista[7]['w'];
@@ -68,13 +66,10 @@ function setup() {
 		}
 	}
 
-	autos[1]['x']=Math.floor(width/2)
-	
-	size=autos[1]['x']-autos[1]['w']*4;
+	autos[1]['x']=Math.floor(width/2);
 	autos[1]['y']=0;
 	for(let j =2; j<=4; j++){
-		autos[j]['x']=Math.floor(width/2);		
-		size=Math.floor(autos[j]['x']-autos[j]['w']*4);
+		autos[j]['x']=Math.floor(width/2);
 		autos[j]['y'] = Math.floor(autos[j-1]['y']+autos[j-1]['w']);
 	}
 
@@ -99,7 +94,7 @@ function draw() {
 		text('Vuelta Auto'+i+": "+autos[i]['vuelta']+"/10" , 500, 250+i*50);
 	}
 	text("Vueltas Totales:"+vueltas,500,200)
-	
+
 }
 
 function pistaD(){
@@ -138,6 +133,6 @@ function autosMostrar(){
 			text("Gano Auto "+id,500,250);
 			noLoop();
 		}
-		
+
 	}
 }
